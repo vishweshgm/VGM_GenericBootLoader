@@ -1,0 +1,26 @@
+18:18:12 **** Incremental Build of configuration Debug for project stmprogrammer ****
+Info: Internal Builder is used for build
+gcc "-IE:\\myStudy_Projects\\Elpse_proj_src\\workspace_stm32programmer\\stmprogrammer\\inc" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WindowsSerialPort.o" "..\\src\\WindowsSerialPort.c" 
+..\src\WindowsSerialPort.c: In function 'read_serial_port':
+..\src\WindowsSerialPort.c:96:35: warning: passing argument 4 of 'ReadFile' from incompatible pointer type [-Wincompatible-pointer-types]
+     ReadFile(hComm, pBuffer, len, &no_of_bytes_read, NULL);
+                                   ^
+In file included from C:/TDM-GCC-64/x86_64-w64-mingw32/include/winbase.h:18:0,
+                 from C:/TDM-GCC-64/x86_64-w64-mingw32/include/Windows.h:70,
+                 from E:\myStudy_Projects\Elpse_proj_src\workspace_stm32programmer\stmprogrammer\inc/main.h:4,
+                 from ..\src\WindowsSerialPort.c:2:
+C:/TDM-GCC-64/x86_64-w64-mingw32/include/fileapi.h:166:29: note: expected 'LPDWORD {aka long unsigned int *}' but argument is of type 'uint32_t * {aka unsigned int *}'
+   WINBASEAPI WINBOOL WINAPI ReadFile (HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);
+                             ^
+gcc "-IE:\\myStudy_Projects\\Elpse_proj_src\\workspace_stm32programmer\\stmprogrammer\\inc" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\BlCommands.o" "..\\src\\BlCommands.c" 
+..\src\BlCommands.c: In function 'decode_menu_command_code':
+..\src\BlCommands.c:258:19: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t * {aka unsigned char *}' [-Wformat=]
+             scanf(" %d",&sector_numbers[i]);
+                   ^
+..\src\BlCommands.c:251:14: warning: unused variable 'user_input' [-Wunused-variable]
+         char user_input;
+              ^
+gcc -o stmprogrammer.exe "src\\BlCommands.o" "src\\BlReplyProcessing.o" "src\\LinuxSerialPort.o" "src\\OSxSerialPort.o" "src\\WindowsSerialPort.o" "src\\fileops.o" "src\\main.o" "src\\stmprogrammer.o" "src\\utilities.o" 
+
+18:18:17 Build Finished. 0 errors, 3 warnings. (took 5s.139ms)
+

@@ -32,7 +32,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
+#include "stdarg.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -185,6 +186,7 @@ uint16_t read_OB_rw_protection_status(void);
 
 #define INVALID_SECTOR 0x04
 
+#define C_UART &huart3
 /*Some Start and End addresses of different memories of STM32F446xx MCU */
 /*Change this according to your MCU */
 #define SRAM1_SIZE            112*1024     // STM32F446RE has 112KB of SRAM1
